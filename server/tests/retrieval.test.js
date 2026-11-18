@@ -27,3 +27,31 @@ test('BM25 ranks matching context above unrelated context', () => {
   assert.equal(ranked[0].content, docs[0].content);
 });
 
+test('retrieveContext processes uploaded context files and extracts evidence', async () => {
+  const { retrieveContext } = await import('../services/retrievalService.js');
+  const mockRequirements = {
+    objective: 'Build an authentication system with OAuth2 and JWT',
+    task_type: 'coding_and_debugging',
+    functional_requirements: ['OAuth2 flow', 'JWT refresh tokens']
+  };
+  const mockProfile = {
+    id: 'chatgpt',
+    name: 'ChatGPT',
+    promptStyle: 'Clear step-by-step instructions',
+    references: [{ title: 'OpenAI Prompt Guide', url: 'https://platform.openai.com/docs' }]
+  };
+  const mockFiles = [
+    {
+      originalName: 'auth_spec.txt',
+      text: 'OAuth2 authorization server guidelines. Tokens must use RS256 signatures with 15-minute expiration windows. Refresh tokens must be rotated on every redemption cycle.'
+    }
+  ];
+
+  const result = retrieveContext(mockRequirements, mockProfile, mockFiles);
+  assert.equal(result.uploadedFileCount, 1);
+  assert.ok(result.chunkCount >= 1);
+  assert.ok(result.compactSummary.includes('auth_spec.txt') || result.compactSummary.includes('OAuth2'));
+  assert.ok(result.detailedPackage.includes('auth_spec.txt'));
+  assert.ok(result.detailedPackage.includes('RS256'));
+});
+

@@ -21,6 +21,15 @@ const defaultPlatforms: Platform[] = [
   { id: 'notebooklm', name: 'NotebookLM', url: 'https://notebooklm.google.com/', promptStyle: 'Strict source-grounded inquiry guide with document upload advisory and citation rules.' }
 ];
 
+const platformCapabilities: Record<string, { badge: string; color: string; desc: string }> = {
+  chatgpt: { badge: 'Step-by-step & Boundaries', color: '#10a37f', desc: 'Reasoning trees, negative boundaries & contract enforcement' },
+  claude: { badge: 'Hierarchical XML Delimiters', color: '#d97706', desc: 'Clean tag separation, zero preamble & semantic role priming' },
+  gemini: { badge: 'Direct Imperative Commands', color: '#2563eb', desc: 'Multimodal groundings, direct headers & structured acceptance' },
+  perplexity: { badge: 'Live Citations & Recency', color: '#0891b2', desc: 'Boolean search formulation, source tiering & temporal bounds' },
+  lovable: { badge: 'Full-Stack PRD Architecture', color: '#db2777', desc: 'React 19 + Tailwind tokens, schema models & deterministic UI' },
+  notebooklm: { badge: 'Strict Source Grounding Only', color: '#6366f1', desc: 'Zero external hallucination, upload verification & citation keys' },
+};
+
 const taskCategories = [
   { id: 'auto', name: 'Auto-Detect' },
   { id: 'research_and_fact_finding', name: 'Research & Fact-Finding' },
@@ -483,6 +492,10 @@ function App() {
               <p className="catalyst-badge-desc">
                 In chemistry, a catalyst lowers the activation energy required to initiate a reaction. In Generative AI, Samskartha acts as that exact catalyst: eliminating prompt underspecification, removing hallucination hazards, and grounding context so models succeed on the very first execution.
               </p>
+              <div className="catalyst-chem-badge">
+                <Zap size={12} />
+                <span>Reaction Kinetics: ΔE‡(Catalyzed) ≪ ΔE‡(Raw) · Zero Hallucination Overhead</span>
+              </div>
             </div>
           </div>
 
@@ -533,7 +546,11 @@ function App() {
             />
             <div className="input-meta">
               <span>Press <kbd className="keycap">Ctrl</kbd> + <kbd className="keycap">Enter</kbd> to generate package.</span>
-              <span>{request.length.toLocaleString()} / 25,000</span>
+              <span>
+                {request.trim() ? `${request.trim().split(/\s+/).length} words · ` : ''}
+                {request.length > 0 ? `~${Math.ceil(request.length / 4)} tokens · ` : ''}
+                {request.length.toLocaleString()} / 25,000
+              </span>
             </div>
 
             {/* Task Category Selector */}
@@ -562,23 +579,36 @@ function App() {
               <span className="field-hint">Choose destination platform</span>
             </div>
             <div className="platform-grid">
-              {platforms.map((p) => (
-                <button
-                  key={p.id}
-                  className={`platform-card ${p.id === platformId ? 'selected' : ''}`}
-                  onClick={() => setPlatformId(p.id)}
-                  type="button"
-                >
-                  <span className={`platform-symbol symbol-${p.id}`}>{p.name.slice(0, 1)}</span>
-                  <span className="platform-copy">
-                    <strong>{p.name}</strong>
-                    <small>{p.promptStyle || 'Platform-specific prompt profile'}</small>
-                  </span>
-                  <span className="radio-indicator">
-                    {p.id === platformId && <Check size={12} />}
-                  </span>
-                </button>
-              ))}
+              {platforms.map((p) => {
+                const cap = platformCapabilities[p.id];
+                const isSelected = p.id === platformId;
+                return (
+                  <button
+                    key={p.id}
+                    data-platform={p.id}
+                    className={`platform-card ${isSelected ? 'selected' : ''}`}
+                    onClick={() => setPlatformId(p.id)}
+                    type="button"
+                  >
+                    <div className="platform-card-header">
+                      <span className={`platform-symbol symbol-${p.id}`}>{p.name.slice(0, 1)}</span>
+                      <span className="platform-copy">
+                        <strong>{p.name}</strong>
+                        <small>{p.promptStyle || 'Platform-specific prompt profile'}</small>
+                      </span>
+                      <span className="radio-indicator">
+                        {isSelected && <Check size={12} />}
+                      </span>
+                    </div>
+                    {cap && (
+                      <span className="platform-badge-pill">
+                        <Zap size={11} color={cap.color} />
+                        {cap.badge}
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
             </div>
 
             {/* Context Files Upload */}
@@ -727,7 +757,12 @@ function App() {
                       <span className={`platform-symbol symbol-${result.platform.id}`}>
                         {result.platform.name.slice(0, 1)}
                       </span>
-                      <strong>{result.platform.name}</strong>
+                      <div>
+                        <strong style={{ fontSize: '15px' }}>{result.platform.name}</strong>
+                        <span style={{ display: 'block', fontSize: '11px', color: 'var(--text-muted)' }}>
+                          {platformCapabilities[result.platform.id]?.badge || 'Platform Profile'}
+                        </span>
+                      </div>
                     </span>
                     <span className={`mode-badge ${result.mode}`}>
                       {result.mode === 'gemini' ? 'Gemini AI Assisted' : 'Platform Adapter (Demo)'}
@@ -735,20 +770,58 @@ function App() {
                   </div>
 
                   <div className="meta-right">
-                    <span className={`score-badge ${result.qualityCheck.passed ? 'passed' : 'review'}`}>
-                      <CheckCircle2 size={13} />
-                      Quality Score: {result.qualityCheck.score}/100
-                    </span>
+                    <div className="radial-score-container">
+                      <svg width="40" height="40" viewBox="0 0 40 40">
+                        <circle cx="20" cy="20" r="16" stroke="var(--panel-border)" strokeWidth="3.5" fill="none" />
+                        <circle
+                          cx="20"
+                          cy="20"
+                          r="16"
+                          stroke={result.qualityCheck.score >= 90 ? '#10b981' : '#f59e0b'}
+                          strokeWidth="3.5"
+                          strokeDasharray="100.5"
+                          strokeDashoffset={100.5 - (100.5 * result.qualityCheck.score) / 100}
+                          strokeLinecap="round"
+                          fill="none"
+                          style={{ transform: 'rotate(-90deg)', transformOrigin: '50% 50%', transition: 'stroke-dashoffset 0.6s ease' }}
+                        />
+                        <text x="20" y="24" textAnchor="middle" fontSize="11" fontWeight="bold" fill="var(--text-main)" fontFamily="var(--font-heading)">
+                          {result.qualityCheck.score}
+                        </text>
+                      </svg>
+                      <div className="radial-score-info">
+                        <span className="radial-score-title">Quality Verification</span>
+                        <span className="radial-score-status">
+                          {result.qualityCheck.score >= 90 ? 'Optimal (AST Pass)' : 'Review Criteria'}
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                {/* Token & Compression Metrics */}
+                {/* Telemetry KPI Grid */}
                 {result.metrics && (
-                  <div className="metrics-strip">
-                    <span>Prompt: <strong>~{result.metrics.promptTokensEst} tokens</strong></span>
-                    <span>Context: <strong>~{result.metrics.contextTokensEst} tokens</strong></span>
-                    <span>Total Package: <strong>~{result.metrics.totalPackageTokensEst} tokens</strong></span>
-                    <span>Compression: <strong>{result.metrics.compressionRatioPercent}</strong></span>
+                  <div className="telemetry-grid">
+                    <div className="telemetry-card">
+                      <span className="telemetry-label"><Cpu size={12} /> Prompt Size</span>
+                      <span className="telemetry-val">~{result.metrics.promptTokensEst} tokens</span>
+                      <span className="telemetry-sub">IR Compiled</span>
+                    </div>
+                    <div className="telemetry-card">
+                      <span className="telemetry-label"><Database size={12} /> Context Size</span>
+                      <span className="telemetry-val">~{result.metrics.contextTokensEst} tokens</span>
+                      <span className="telemetry-sub">BM25 + MMR Ranked</span>
+                    </div>
+                    <div className="telemetry-card">
+                      <span className="telemetry-label"><Zap size={12} /> Compression</span>
+                      <span className="telemetry-val">{result.metrics.compressionRatioPercent}</span>
+                      <span className="telemetry-sub">Fluff Pruned</span>
+                    </div>
+                    <div className="telemetry-card">
+                      <span className="telemetry-label"><ShieldCheck size={12} /> Total Package</span>
+                      <span className="telemetry-val">~{result.metrics.totalPackageTokensEst} tokens</span>
+                      <span className="telemetry-sub">{result.references.length} Directives</span>
+                    </div>
                   </div>
                 )}
 
@@ -946,7 +1019,15 @@ function App() {
                   </button>
 
                   {/* Prominent One-Click Platform Handoff */}
-                  <button className="handoff-btn" type="button" onClick={copyAndOpen}>
+                  <button
+                    className="handoff-btn"
+                    type="button"
+                    onClick={copyAndOpen}
+                    style={{
+                      background: platformCapabilities[result.platform.id]?.color || 'var(--accent)',
+                      boxShadow: `0 8px 24px ${platformCapabilities[result.platform.id]?.color ? platformCapabilities[result.platform.id].color + '45' : 'rgba(46, 139, 123, 0.28)'}`
+                    }}
+                  >
                     <Sparkles size={16} />
                     Copy Package & Open {result.platform.name}
                     <ExternalLink size={16} />

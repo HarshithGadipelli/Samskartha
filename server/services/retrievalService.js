@@ -271,7 +271,11 @@ export function retrieveContext(requirements, profile, uploadedFiles = [], optio
   const mmrSelected = selectByMMR(ranked, 6, options.lambda || 0.7);
 
   const finalItems = mmrSelected.length ? mmrSelected : platformDocs.slice(0, 2);
-  const evidence = compressContextEvidence(finalItems.filter((item) => item.sourceType === 'user-file'));
+  let userItems = finalItems.filter((item) => item.sourceType === 'user-file');
+  if (userDocs.length > 0 && userItems.length === 0) {
+    userItems = userDocs.slice(0, 4);
+  }
+  const evidence = compressContextEvidence(userItems);
 
   return {
     query,
