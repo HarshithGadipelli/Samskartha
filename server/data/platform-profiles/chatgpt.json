@@ -1,0 +1,68 @@
+{
+  "id": "chatgpt",
+  "name": "ChatGPT",
+  "url": "https://chatgpt.com/",
+  "destinationUrl": "https://chatgpt.com/",
+  "promptStyle": "Clear task framing, role-based instruction, structured steps, explicit constraints, and defined output formatting.",
+  "principles": [
+    "State the primary objective, role, and context near the very beginning of the prompt.",
+    "Break complex operations into ordered, numbered steps or modular requirements.",
+    "Explicitly declare negative constraints and boundaries (what NOT to do).",
+    "Specify target output format (tables, markdown headings, code blocks, or schema).",
+    "Request clarification only when missing information materially blocks execution."
+  ],
+  "requiredSections": [
+    "Objective",
+    "Role and Expertise",
+    "Task Instructions",
+    "Requirements & Constraints",
+    "Expected Output Format",
+    "Quality Criteria & Boundaries"
+  ],
+  "rules": [
+    {
+      "ruleId": "GPT-001",
+      "platformId": "chatgpt",
+      "title": "Front-load Context and Objective",
+      "description": "Place the primary task and objective at the top of the prompt to establish framing before detailed instructions.",
+      "applicableTasks": ["all"],
+      "sourceUrl": "https://platform.openai.com/docs/guides/prompt-engineering",
+      "sourceTitle": "OpenAI Prompt Engineering Guide - Strategy: Write clear instructions",
+      "lastVerified": "2026-11-06",
+      "verificationStatus": "verified"
+    },
+    {
+      "ruleId": "GPT-002",
+      "platformId": "chatgpt",
+      "title": "Specify Output Format Explicitly",
+      "description": "State exact structure requirements such as Markdown headings, bullet points, JSON schemas, or step-by-step prose.",
+      "applicableTasks": ["coding_and_debugging", "website_and_application_development", "data_analysis", "writing_and_content_creation"],
+      "sourceUrl": "https://platform.openai.com/docs/guides/prompt-engineering",
+      "sourceTitle": "OpenAI Prompt Engineering Guide - Specify the desired output length and format",
+      "lastVerified": "2026-11-06",
+      "verificationStatus": "verified"
+    },
+    {
+      "ruleId": "GPT-003",
+      "platformId": "chatgpt",
+      "title": "Use Ordered Delimited Steps",
+      "description": "Use numbered lists for sequential tasks and clear delimiters (triple quotes or markdown sections) to separate instructions from reference material.",
+      "applicableTasks": ["coding_and_debugging", "planning_and_problem_solving", "document_analysis_and_summarization"],
+      "sourceUrl": "https://platform.openai.com/docs/guides/prompt-engineering",
+      "sourceTitle": "OpenAI Prompt Engineering Guide - Specify the steps required to complete a task",
+      "lastVerified": "2026-11-06",
+      "verificationStatus": "verified"
+    }
+  ],
+  "contextStrategy": "Place the most relevant reference text directly under a clearly labeled Reference Material section using markdown delimiters. Clearly distinguish user facts from instructions.",
+  "outputGuidance": "Use structured markdown with numbered procedures, bulleted constraints, and code snippets or tables where applicable.",
+  "references": [
+    {
+      "title": "OpenAI Prompt Engineering Guide",
+      "url": "https://platform.openai.com/docs/guides/prompt-engineering",
+      "whyRelevant": "Official OpenAI best practices for structuring clear instructions, delimiting context, and specifying outputs."
+    }
+  ],
+  "lastVerified": "2026-11-06",
+  "profileVersion": "2.0"
+}

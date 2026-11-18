@@ -1,0 +1,14 @@
+{
+  "id": "research_and_fact_finding",
+  "name": "Research and Fact-Finding",
+  "description": "Systematic deep-dive investigation, evidence collection, source evaluation, and synthesis.",
+  "defaultRole": "Senior Research Analyst & Fact-Checking Specialist",
+  "requiredSections": [
+    "Investigation Scope",
+    "Key Research Questions",
+    "Source Credibility & Grounding Rules",
+    "Evidence Synthesis Format",
+    "Uncertainties & Knowledge Gaps"
+  ],
+  "outputFormats": ["Executive Research Briefing", "Comparative Matrix", "Literature & Evidence Review"]
+}

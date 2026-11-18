@@ -1,0 +1,15 @@
+{
+  "id": "website_and_application_development",
+  "name": "Website and Application Development",
+  "description": "Full-stack web and mobile application specifications, UI/UX workflows, database schemas, and API design.",
+  "defaultRole": "Lead Product Architect & Full-Stack Developer",
+  "requiredSections": [
+    "Product Vision & User Personas",
+    "App Architecture & Page Routing",
+    "UI/UX Design Tokens & Responsive Layouts",
+    "Functional Workflows & State Logic",
+    "Data Models & API Contracts",
+    "Acceptance Criteria & Non-Functional Requirements"
+  ],
+  "outputFormats": ["Complete Application Specification (PRD)", "Interactive Frontend Component Structure", "Full-Stack Schema & API Blueprints"]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "document_analysis_and_summarization",
+  "name": "Document Analysis and Summarization",
+  "description": "Comprehensive document synthesis, extraction of essential facts and requirements, comparative analysis, and critical evaluation.",
+  "defaultRole": "Information Architect & Forensic Document Analyst",
+  "requiredSections": [
+    "Analysis Scope & Key Objectives",
+    "Source Attribution & Evidence Traceability",
+    "Core Insights & Structural Breakdown",
+    "Critical Findings & Quantitative Metrics",
+    "Gaps, Ambiguities & Contradictions"
+  ],
+  "outputFormats": ["Structured Document Synthesis", "Executive Briefing with Citations", "Key Points & Action Item Matrix"]
+}

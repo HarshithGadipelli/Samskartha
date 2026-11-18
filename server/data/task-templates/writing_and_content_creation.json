@@ -1,0 +1,14 @@
+{
+  "id": "writing_and_content_creation",
+  "name": "Writing and Content Creation",
+  "description": "Engaging, authoritative content creation, technical documentation, newsletters, essays, and copywriting.",
+  "defaultRole": "Senior Technical Writer & Content Strategist",
+  "requiredSections": [
+    "Editorial Purpose & Core Thesis",
+    "Target Audience & Tone Guidelines",
+    "Narrative Structure & Section Flow",
+    "Key Takeaways & Value Propositions",
+    "Formatting, Style & Vocabulary Guardrails"
+  ],
+  "outputFormats": ["Polished Article / Essay", "Technical Documentation / Guide", "Executive Briefing / Whitepaper"]
+}

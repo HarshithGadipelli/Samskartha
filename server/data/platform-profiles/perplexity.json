@@ -1,0 +1,78 @@
+{
+  "id": "perplexity",
+  "name": "Perplexity",
+  "url": "https://www.perplexity.ai/",
+  "destinationUrl": "https://www.perplexity.ai/",
+  "promptStyle": "Research-focused queries specifying search scope, time windows, domain authorities, comparative criteria, and citation standards.",
+  "principles": [
+    "Frame a clear, concise primary research question suitable for real-time web retrieval.",
+    "State explicit temporal constraints (e.g. latest 2025-2026 data, historical range).",
+    "Specify authoritative domain preferences (e.g. peer-reviewed, official documentation, regulatory filings).",
+    "Define comparative axes and evidence metrics for syntheses.",
+    "Require inline source citations and separation of factual consensus from opinion."
+  ],
+  "requiredSections": [
+    "Research Objective & Question",
+    "Search Scope & Recency Window",
+    "Authoritative Source Preferences",
+    "Evidence & Comparison Criteria",
+    "Citation & Synthesis Format"
+  ],
+  "rules": [
+    {
+      "ruleId": "PPLX-001",
+      "platformId": "perplexity",
+      "title": "Define Clear Temporal and Geographic Scope",
+      "description": "Specify time windows (e.g., current year, recent changes) and regional boundaries so the search engine queries the most relevant live indices.",
+      "applicableTasks": [
+        "research_and_fact_finding",
+        "data_analysis",
+        "planning_and_problem_solving"
+      ],
+      "sourceUrl": "https://www.perplexity.ai/help-center",
+      "sourceTitle": "Perplexity Search & Research Guidelines",
+      "lastVerified": "2026-11-06",
+      "verificationStatus": "verified"
+    },
+    {
+      "ruleId": "PPLX-002",
+      "platformId": "perplexity",
+      "title": "Enforce Strict Citation & Source Grounding",
+      "description": "Demand numbered in-text citations linked to verified URLs, and mandate flagging conflicting reports across sources.",
+      "applicableTasks": [
+        "research_and_fact_finding",
+        "document_analysis_and_summarization"
+      ],
+      "sourceUrl": "https://www.perplexity.ai/help-center",
+      "sourceTitle": "Perplexity Sourcing and Citation Standards",
+      "lastVerified": "2026-11-06",
+      "verificationStatus": "verified"
+    },
+    {
+      "ruleId": "PPLX-003",
+      "platformId": "perplexity",
+      "title": "Structured Comparative Synthesis",
+      "description": "Request structured Markdown tables comparing alternatives across cost, performance, timeline, and trade-offs.",
+      "applicableTasks": [
+        "research_and_fact_finding",
+        "website_and_application_development",
+        "planning_and_problem_solving"
+      ],
+      "sourceUrl": "https://www.perplexity.ai/help-center",
+      "sourceTitle": "Perplexity Best Practices for Technical Research",
+      "lastVerified": "2026-11-06",
+      "verificationStatus": "verified"
+    }
+  ],
+  "contextStrategy": "Treat user background context as an initial hypothesis or baseline, and instruct Perplexity to verify and augment it with current public web sources.",
+  "outputGuidance": "Synthesize findings into an Executive Summary, Detailed Breakdown with Citations, Comparison Matrix, and Remaining Uncertainties.",
+  "references": [
+    {
+      "title": "Perplexity Help Center & Search Documentation",
+      "url": "https://www.perplexity.ai/help-center",
+      "whyRelevant": "Official guidance on how Perplexity searches the web, balances sources, and formats citations."
+    }
+  ],
+  "lastVerified": "2026-11-06",
+  "profileVersion": "2.0"
+}

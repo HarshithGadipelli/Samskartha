@@ -1,0 +1,68 @@
+{
+  "id": "lovable",
+  "name": "Lovable",
+  "url": "https://lovable.dev/",
+  "destinationUrl": "https://lovable.dev/",
+  "promptStyle": "Production application-building specification detailing user personas, page hierarchy, UI/UX design tokens, database schema, and acceptance criteria.",
+  "principles": [
+    "Format as an end-to-end Product & Implementation Specification rather than a vague conversational prompt.",
+    "Outline pages, routing, layouts, and responsive desktop/mobile behavior explicitly.",
+    "Define concrete component hierarchy, UI state management, and design system tokens (Tailwind classes, shadcn/ui).",
+    "Specify database schema (tables, relationships, RLS policies, sample records) and external integrations.",
+    "Declare acceptance criteria and strictly define what components or files should NOT be modified or deleted."
+  ],
+  "requiredSections": [
+    "Project Overview & Target Users",
+    "Application Architecture & Navigation",
+    "UI/UX Design System & Layouts",
+    "Core Functional Features & Logic",
+    "Data Models & Schema Requirements",
+    "Constraints, Guardrails & Acceptance Criteria"
+  ],
+  "rules": [
+    {
+      "ruleId": "LVB-001",
+      "platformId": "lovable",
+      "title": "Application-Building Specification Format",
+      "description": "Structure prompt as a functional PRD with architecture, user stories, and acceptance criteria tailored for full-stack code generation.",
+      "applicableTasks": ["website_and_application_development", "coding_and_debugging"],
+      "sourceUrl": "https://docs.lovable.dev/",
+      "sourceTitle": "Lovable Engineering & Prompting Best Practices",
+      "lastVerified": "2026-11-06",
+      "verificationStatus": "verified"
+    },
+    {
+      "ruleId": "LVB-002",
+      "platformId": "lovable",
+      "title": "Define UI Components and State",
+      "description": "List exact components, UI states (loading, empty, error, active), and modern styling (Tailwind CSS, Lucide icons, responsive breakpoints).",
+      "applicableTasks": ["website_and_application_development"],
+      "sourceUrl": "https://docs.lovable.dev/",
+      "sourceTitle": "Lovable UI & Component Construction",
+      "lastVerified": "2026-11-06",
+      "verificationStatus": "verified"
+    },
+    {
+      "ruleId": "LVB-003",
+      "platformId": "lovable",
+      "title": "Specify Boundaries & Immutable Code",
+      "description": "Explicitly state which directories, APIs, or architectural patterns should be preserved to prevent code regression.",
+      "applicableTasks": ["coding_and_debugging", "website_and_application_development"],
+      "sourceUrl": "https://docs.lovable.dev/",
+      "sourceTitle": "Lovable Incremental Development & Boundaries",
+      "lastVerified": "2026-11-06",
+      "verificationStatus": "verified"
+    }
+  ],
+  "contextStrategy": "Organize uploaded context (existing schemas, API specs, branding) into labeled technical appendices that Lovable can translate into code.",
+  "outputGuidance": "Deliver a complete, implementation-ready software specification with component breakdown, schema definition, and step-by-step build guidance.",
+  "references": [
+    {
+      "title": "Lovable Academy & Documentation",
+      "url": "https://docs.lovable.dev/",
+      "whyRelevant": "Official Lovable best practices for crafting actionable full-stack application prompts and specifications."
+    }
+  ],
+  "lastVerified": "2026-11-06",
+  "profileVersion": "2.0"
+}

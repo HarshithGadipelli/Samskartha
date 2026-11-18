@@ -1,0 +1,67 @@
+{
+  "id": "gemini",
+  "name": "Gemini",
+  "url": "https://gemini.google.com/app",
+  "destinationUrl": "https://gemini.google.com/app",
+  "promptStyle": "Direct actionable instructions, multimodal input references, cleanly demarcated task context, and verifiable output criteria.",
+  "principles": [
+    "State task instructions concisely and directly without superfluous preamble.",
+    "Structure contextual data and user inputs with distinct headers and bullet points.",
+    "Clarify multimodal relationships (documents, diagrams, code) and desired transformations.",
+    "Provide clear negative constraints and quality benchmarks.",
+    "Distinguish empirical facts from creative inferences or assumptions."
+  ],
+  "requiredSections": [
+    "Task Objective",
+    "Direct Instructions",
+    "Context & Reference Inputs",
+    "Constraints & Boundary Rules",
+    "Output Requirements & Acceptance Criteria"
+  ],
+  "rules": [
+    {
+      "ruleId": "GEM-001",
+      "platformId": "gemini",
+      "title": "Direct and Concise Instructions",
+      "description": "Express goals with active, imperative verbs and eliminate conversational filler for maximum adherence.",
+      "applicableTasks": ["all"],
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/prompting-strategies",
+      "sourceTitle": "Gemini API Prompting Strategies - Be clear and specific",
+      "lastVerified": "2026-11-06",
+      "verificationStatus": "verified"
+    },
+    {
+      "ruleId": "GEM-002",
+      "platformId": "gemini",
+      "title": "Structured Input Delineation",
+      "description": "Group complex input materials under descriptive headings and specify exact operations for each source.",
+      "applicableTasks": ["document_analysis_and_summarization", "data_analysis", "research_and_fact_finding"],
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/prompting-strategies",
+      "sourceTitle": "Gemini API Prompting Strategies - Structure your prompt",
+      "lastVerified": "2026-11-06",
+      "verificationStatus": "verified"
+    },
+    {
+      "ruleId": "GEM-003",
+      "platformId": "gemini",
+      "title": "Explicit Acceptance Criteria",
+      "description": "Define measurable success criteria and precise output formatting targets.",
+      "applicableTasks": ["coding_and_debugging", "website_and_application_development", "planning_and_problem_solving"],
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/prompting-strategies",
+      "sourceTitle": "Gemini API Prompting Strategies - Give examples and specify output format",
+      "lastVerified": "2026-11-06",
+      "verificationStatus": "verified"
+    }
+  ],
+  "contextStrategy": "Organize context chunks cleanly under a dedicated 'Context & Reference Data' section with document origin headers.",
+  "outputGuidance": "Specify layout structure, markdown formatting, bulleted lists, and specific sections to return.",
+  "references": [
+    {
+      "title": "Gemini API Prompting Strategies",
+      "url": "https://ai.google.dev/gemini-api/docs/prompting-strategies",
+      "whyRelevant": "Official Google prompting documentation covering clarity, structuring, and multimodal guidelines."
+    }
+  ],
+  "lastVerified": "2026-11-06",
+  "profileVersion": "2.0"
+}

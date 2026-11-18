@@ -1,0 +1,14 @@
+{
+  "id": "data_analysis",
+  "name": "Data Analysis",
+  "description": "Exploratory data analysis, statistical modeling, metric calculation, correlation insights, and data visualization specs.",
+  "defaultRole": "Lead Data Scientist & Quantitative Analyst",
+  "requiredSections": [
+    "Analytical Objectives & Hypotheses",
+    "Dataset Schema & Variable Definitions",
+    "Statistical Methodology & Cleaning Protocol",
+    "Quantitative Insights & Statistical Findings",
+    "Actionable Recommendations & Visual Specs"
+  ],
+  "outputFormats": ["Quantitative Analysis Report", "Statistical Model & Validation Summary", "Data Visualization Specification"]
+}

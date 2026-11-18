@@ -1,0 +1,77 @@
+{
+  "id": "claude",
+  "name": "Claude",
+  "url": "https://claude.ai/new",
+  "destinationUrl": "https://claude.ai/new",
+  "promptStyle": "Hierarchical XML-delimited sections, precise role declaration, explicit constraints, and step-by-step reasoning guidance.",
+  "principles": [
+    "Separate instructions, input context, rules, and output criteria using explicit XML tags (e.g. <role>, <instructions>, <context>, <constraints>, <output_format>).",
+    "Provide clear background context and explain the 'why' behind requirements.",
+    "Instruct Claude on preferred reasoning behavior (e.g. think through edge cases before answering).",
+    "Specify boundaries and explicitly instruct what not to assume or hallucinate.",
+    "Use concrete few-shot examples when a nuanced formatting or style is needed."
+  ],
+  "requiredSections": [
+    "<role>",
+    "<task_objective>",
+    "<context>",
+    "<instructions>",
+    "<constraints>",
+    "<output_format>"
+  ],
+  "rules": [
+    {
+      "ruleId": "CLD-001",
+      "platformId": "claude",
+      "title": "Use XML Tags for Delimitation",
+      "description": "Structure prompts with XML tags (<instructions>, <context>, <constraints>, <output_format>) to provide deterministic parse boundaries.",
+      "applicableTasks": [
+        "all"
+      ],
+      "sourceUrl": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags",
+      "sourceTitle": "Anthropic Prompt Engineering - Use XML tags to structure your prompt",
+      "lastVerified": "2026-11-06",
+      "verificationStatus": "verified"
+    },
+    {
+      "ruleId": "CLD-002",
+      "platformId": "claude",
+      "title": "Explicit Role Priming",
+      "description": "Establish a specialized professional persona inside <role> to anchor the reasoning depth and vocabulary.",
+      "applicableTasks": [
+        "all"
+      ],
+      "sourceUrl": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/system-prompts",
+      "sourceTitle": "Anthropic Prompt Engineering - Give Claude a role",
+      "lastVerified": "2026-11-06",
+      "verificationStatus": "verified"
+    },
+    {
+      "ruleId": "CLD-003",
+      "platformId": "claude",
+      "title": "Pre-computation Reasoning Guidelines",
+      "description": "Instruct Claude to analyze edge cases and verify constraints systematically before producing final deliverables.",
+      "applicableTasks": [
+        "coding_and_debugging",
+        "website_and_application_development",
+        "data_analysis",
+        "planning_and_problem_solving"
+      ],
+      "sourceUrl": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/chain-of-thought",
+      "sourceTitle": "Anthropic Prompt Engineering - Chain of thought reasoning",
+      "lastVerified": "2026-11-06",
+      "verificationStatus": "verified"
+    }
+  ],
+  "contextStrategy": "Wrap all user documentation inside <context> tags with clear sub-tags such as <document title=\"...\"> so Claude knows which facts are authoritative.",
+  "outputGuidance": "Use <output_format> to define exact document hierarchy, schemas, or Markdown layouts with strict validation criteria.",
+  "references": [
+    {
+      "title": "Anthropic Prompt Engineering Overview",
+      "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
+      "whyRelevant": "Official Anthropic guidance on prompt structuring, XML tags, role definition, and reasoning clarity."
+    }
+  ],
+  "lastVerified": "2026-11-06",
+  "profileVersion": "2.0"
+}

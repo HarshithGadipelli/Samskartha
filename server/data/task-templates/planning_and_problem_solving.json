@@ -1,0 +1,14 @@
+{
+  "id": "planning_and_problem_solving",
+  "name": "Planning and Problem-Solving",
+  "description": "Strategic roadmapping, operational problem-solving, root cause analysis, decision trees, and phased execution plans.",
+  "defaultRole": "Strategic Operations Director & Solutions Architect",
+  "requiredSections": [
+    "Problem Statement & Strategic Goals",
+    "Current State & Root Cause Assessment",
+    "Phased Roadmap & Milestone Schedule",
+    "Resource, Dependency & Risk Matrix",
+    "Contingency Protocols & Success Metrics"
+  ],
+  "outputFormats": ["Phased Implementation Roadmap", "Decision Framework & Risk Matrix", "Operational Playbook"]
+}

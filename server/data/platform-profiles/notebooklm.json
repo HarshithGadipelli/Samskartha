@@ -1,0 +1,68 @@
+{
+  "id": "notebooklm",
+  "name": "NotebookLM",
+  "url": "https://notebooklm.google.com/",
+  "destinationUrl": "https://notebooklm.google.com/",
+  "promptStyle": "Source-grounded research instructions focusing on uploaded notebook documents, synthesis questions, evidence attribution, and knowledge gap detection.",
+  "principles": [
+    "Ground all analysis strictly in the sources uploaded to the NotebookLM notebook.",
+    "Formulate core investigation questions and delineate the analytical scope.",
+    "Explicitly instruct the model to report when sources lack sufficient evidence rather than speculating.",
+    "Direct the synthesis format (e.g. Executive Briefing, Study Guide, Chronological Timeline, FAQ, or Thematic Matrix).",
+    "Remind the user that reference documents must be added to their NotebookLM notebook directly in the NotebookLM UI."
+  ],
+  "requiredSections": [
+    "Core Research Objective",
+    "Notebook Source Boundaries & Requirements",
+    "Key Investigation Questions",
+    "Evidence Attribution & Citation Rules",
+    "Knowledge Synthesis Format & Gap Reporting",
+    "NotebookLM User Upload Advisory"
+  ],
+  "rules": [
+    {
+      "ruleId": "NLM-001",
+      "platformId": "notebooklm",
+      "title": "Strict Source Grounding Directive",
+      "description": "Instruct NotebookLM to base conclusions exclusively on the active notebook sources and declare when information is missing from them.",
+      "applicableTasks": ["document_analysis_and_summarization", "research_and_fact_finding", "learning_and_educational_assistance"],
+      "sourceUrl": "https://support.google.com/notebooklm/",
+      "sourceTitle": "Google NotebookLM Help - Grounding and Citations",
+      "lastVerified": "2026-11-06",
+      "verificationStatus": "verified"
+    },
+    {
+      "ruleId": "NLM-002",
+      "platformId": "notebooklm",
+      "title": "Targeted Inquiry Framing",
+      "description": "Break down large document analysis requests into clear numbered sub-questions that can be individually mapped to source passages.",
+      "applicableTasks": ["document_analysis_and_summarization", "research_and_fact_finding"],
+      "sourceUrl": "https://support.google.com/notebooklm/",
+      "sourceTitle": "Google NotebookLM Help - Asking questions and creating notes",
+      "lastVerified": "2026-11-06",
+      "verificationStatus": "verified"
+    },
+    {
+      "ruleId": "NLM-003",
+      "platformId": "notebooklm",
+      "title": "NotebookLM Handoff Advisory",
+      "description": "Remind the user to upload their source documents (PDF, DOCX, Google Docs) into their NotebookLM notebook before pasting the prompt.",
+      "applicableTasks": ["all"],
+      "sourceUrl": "https://support.google.com/notebooklm/",
+      "sourceTitle": "Google NotebookLM Help - Adding sources",
+      "lastVerified": "2026-11-06",
+      "verificationStatus": "verified"
+    }
+  ],
+  "contextStrategy": "Summarize key themes of the context so the user knows what questions to ask, and remind the user to upload the full source documents into NotebookLM.",
+  "outputGuidance": "Structure output as an evidence-grounded research synthesis with source citations, key takeaways, and explicit missing-evidence markers.",
+  "references": [
+    {
+      "title": "Google NotebookLM Help Center",
+      "url": "https://support.google.com/notebooklm/",
+      "whyRelevant": "Official Google documentation on notebook creation, source grounding, citations, and guide generation."
+    }
+  ],
+  "lastVerified": "2026-11-06",
+  "profileVersion": "2.0"
+}

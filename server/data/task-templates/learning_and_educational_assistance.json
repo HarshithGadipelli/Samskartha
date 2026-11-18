@@ -1,0 +1,14 @@
+{
+  "id": "learning_and_educational_assistance",
+  "name": "Learning and Educational Assistance",
+  "description": "Pedagogical curriculum design, concept explanation using the Feynman technique, interactive study guides, and assessment rubrics.",
+  "defaultRole": "Senior Educator & Instructional Designer",
+  "requiredSections": [
+    "Learning Objectives & Prerequisites",
+    "Conceptual Breakdown & Intuitive Analogies",
+    "Step-by-Step Guided Walkthrough",
+    "Comprehension Checks & Practice Exercises",
+    "Common Pitfalls & Summary Takeaways"
+  ],
+  "outputFormats": ["Comprehensive Interactive Study Guide", "Conceptual Deep-Dive with Worked Examples", "Curriculum Module with Knowledge Checks"]
+}

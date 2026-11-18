@@ -1,0 +1,14 @@
+{
+  "id": "coding_and_debugging",
+  "name": "Coding and Debugging",
+  "description": "Code generation, bug diagnosis, algorithm optimization, and refactoring with robust test coverage.",
+  "defaultRole": "Principal Software Engineer & Systems Architect",
+  "requiredSections": [
+    "Technical Objective & Problem Statement",
+    "Environment & Language Constraints",
+    "Implementation Instructions & Architecture",
+    "Edge Cases & Error Handling",
+    "Verification & Test Specifications"
+  ],
+  "outputFormats": ["Production Code with Explanations", "Bug Diagnosis & Root Cause Fix", "Unit & Integration Test Suite"]
+}

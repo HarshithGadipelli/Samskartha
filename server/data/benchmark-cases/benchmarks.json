@@ -1,0 +1,107 @@
+[
+  {
+    "id": "bench-res-01",
+    "taskType": "research_and_fact_finding",
+    "title": "Quantum Computing Error Correction (2025-2026)",
+    "request": "Provide an in-depth comparative analysis of recent breakthroughs in quantum error correction between neutral atoms and superconducting qubits. Include error threshold metrics, key research papers, and industrial feasibility.",
+    "expectedSections": ["Research Scope", "Key Questions", "Evidence Requirements", "Citation Expectations"]
+  },
+  {
+    "id": "bench-res-02",
+    "taskType": "research_and_fact_finding",
+    "title": "Renewable Grid Storage Economics",
+    "request": "Investigate levelized cost of storage (LCOS) for sodium-ion vs lithium iron phosphate batteries for grid-scale multi-hour storage. Focus on 2024-2026 commercial deployments and battery degradation data.",
+    "expectedSections": ["Research Scope", "Key Questions", "Evidence Requirements", "Citation Expectations"]
+  },
+  {
+    "id": "bench-res-03",
+    "taskType": "research_and_fact_finding",
+    "title": "AI Agent Orchestration Frameworks",
+    "request": "Survey current production frameworks for multi-agent autonomous orchestration. Contrast state synchronization, latency, cost overhead, and fault recovery mechanisms across top open-source tools.",
+    "expectedSections": ["Research Scope", "Key Questions", "Evidence Requirements", "Citation Expectations"]
+  },
+  {
+    "id": "bench-code-01",
+    "taskType": "coding_and_debugging",
+    "title": "Distributed Lock with Redis and TTL Auto-Refresh",
+    "request": "Implement a battle-tested distributed lock in TypeScript using Redis. Include token ownership verification, automatic heartbeat lease extension via Lua script, and graceful release on shutdown.",
+    "expectedSections": ["Technical Objective", "Language Constraints", "Implementation", "Edge Cases", "Test Specs"]
+  },
+  {
+    "id": "bench-code-02",
+    "taskType": "coding_and_debugging",
+    "title": "React Fiber Memory Leak Diagnostics",
+    "request": "Diagnose and resolve an event listener and closure memory leak in a large-scale React 19 dashboard with live WebSocket streaming. Provide profiling steps and fix implementation.",
+    "expectedSections": ["Technical Objective", "Language Constraints", "Implementation", "Edge Cases", "Test Specs"]
+  },
+  {
+    "id": "bench-code-03",
+    "taskType": "coding_and_debugging",
+    "title": "High-Throughput Zero-Copy Ring Buffer in C++",
+    "request": "Design a lock-free single-producer single-consumer circular ring buffer in C++20 for low-latency market data. Address CPU cache line false sharing and memory ordering barriers.",
+    "expectedSections": ["Technical Objective", "Language Constraints", "Implementation", "Edge Cases", "Test Specs"]
+  },
+  {
+    "id": "bench-app-01",
+    "taskType": "website_and_application_development",
+    "title": "Online Learning Platform for College Students",
+    "request": "Build an online learning platform for college students. Include course management, assignment submission, interactive quiz evaluation, and responsive dashboard using Tailwind CSS and React.",
+    "expectedSections": ["Vision & Personas", "App Architecture", "UI/UX System", "Functional Workflows", "Data Models", "Acceptance Criteria"]
+  },
+  {
+    "id": "bench-app-02",
+    "taskType": "website_and_application_development",
+    "title": "Collaborative Real-time Kanban Workspace",
+    "request": "Develop a real-time collaborative Kanban project board with drag-and-drop cards, swimlanes, activity feeds, role-based access control, and dark mode UI.",
+    "expectedSections": ["Vision & Personas", "App Architecture", "UI/UX System", "Functional Workflows", "Data Models", "Acceptance Criteria"]
+  },
+  {
+    "id": "bench-app-03",
+    "taskType": "website_and_application_development",
+    "title": "AI-Powered Customer Feedback Intelligence Hub",
+    "request": "Create a customer feedback analytics application that ingests support tickets, performs sentiment classification, aggregates recurring themes, and visualizes trends over time.",
+    "expectedSections": ["Vision & Personas", "App Architecture", "UI/UX System", "Functional Workflows", "Data Models", "Acceptance Criteria"]
+  },
+  {
+    "id": "bench-write-01",
+    "taskType": "writing_and_content_creation",
+    "title": "Executive Briefing on Post-Quantum Cryptography Migration",
+    "request": "Write an executive whitepaper for Chief Information Security Officers detailing the urgency, technical standards (NIST FIPS 203/204), and 5-year migration roadmap for post-quantum encryption.",
+    "expectedSections": ["Editorial Purpose", "Audience Guidelines", "Narrative Flow", "Key Takeaways", "Style Guardrails"]
+  },
+  {
+    "id": "bench-write-02",
+    "taskType": "writing_and_content_creation",
+    "title": "Technical Deep Dive on Vector Database Indexing Algorithms",
+    "request": "Draft an authoritative technical blog post explaining HNSW vs ScaNN vs IVF vector indexing, written for senior backend engineers. Include complexity tradeoffs and tuning guidelines.",
+    "expectedSections": ["Editorial Purpose", "Audience Guidelines", "Narrative Flow", "Key Takeaways", "Style Guardrails"]
+  },
+  {
+    "id": "bench-write-03",
+    "taskType": "writing_and_content_creation",
+    "title": "Comprehensive Product Launch Announcement & Press Release",
+    "request": "Create a compelling launch release for a breakthrough developer automation platform. Emphasize developer productivity, security compliance, zero-friction onboarding, and customer proof points.",
+    "expectedSections": ["Editorial Purpose", "Audience Guidelines", "Narrative Flow", "Key Takeaways", "Style Guardrails"]
+  },
+  {
+    "id": "bench-doc-01",
+    "taskType": "document_analysis_and_summarization",
+    "title": "HIPAA & SOC 2 Compliance Audit Synthesis",
+    "request": "Analyze the attached corporate security policy document against SOC 2 Trust Services Criteria and HIPAA Security Rules. Flag non-compliant clauses, ambiguous disclosures, and remediation tasks.",
+    "expectedSections": ["Analysis Scope", "Source Attribution", "Core Insights", "Critical Findings", "Gaps & Contradictions"]
+  },
+  {
+    "id": "bench-doc-02",
+    "taskType": "document_analysis_and_summarization",
+    "title": "Vendor Contract Terms and SLA Gap Analysis",
+    "request": "Review a cloud service provider Master Services Agreement. Identify high-risk indemnification clauses, SLA uptime penalties, termination liabilities, and governing law exceptions.",
+    "expectedSections": ["Analysis Scope", "Source Attribution", "Core Insights", "Critical Findings", "Gaps & Contradictions"]
+  },
+  {
+    "id": "bench-doc-03",
+    "taskType": "document_analysis_and_summarization",
+    "title": "Quarterly Financial Earnings Transcript Synthesis",
+    "request": "Synthesize a 40-page corporate earnings call transcript into a 3-page investor summary highlighting revenue growth, gross margins, management guidance, capital expenditure, and analyst Q&A friction.",
+    "expectedSections": ["Analysis Scope", "Source Attribution", "Core Insights", "Critical Findings", "Gaps & Contradictions"]
+  }
+]
